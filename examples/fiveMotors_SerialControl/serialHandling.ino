@@ -212,7 +212,7 @@ void respondToSerial()
 void sendSerialHelp()
 {
   Serial.println("");
-  //normally you'd put something here about what type of commads were possible
+  //normally you'd put something here about what type of commands were possible
   Serial.println("x motor: l <number of steps> or r <number of steps>\n"
     "y motor: u <number of steps> or d <number of steps>\n"
     "z motor (zoom): f <number of steps> or b <number of steps>\n"
@@ -242,7 +242,7 @@ void sendQueryReply()
 //the first byte (up to a number defined by "longestParameter" 
 //i.e. shorter than the Serial objects, possible buffer which is 128)
 
-//It turns the characters recieved into a number and then 
+//It turns the characters received into a number and then 
 //Does something with it...
 
 int getParameter()
@@ -281,7 +281,7 @@ int getParameter()
     serialBuffer[i] = Serial.read();
 
     //if it is not a space or a number (avr-libc functions) or the negative sign
-    //white space /neg sign at the begining is okay by the strtol that we 
+    //white space /neg sign at the beginning is okay by the strtol that we 
     //will be using later.
     if (!(isdigit(serialBuffer[i]) || isspace(serialBuffer[i]) || serialBuffer[i] == 45)) {
       //error message

@@ -59,7 +59,7 @@ StepperDriver::StepperDriver(int pinArrayLength, int *myPinArray)
    
     _minPulseOnTime = 10;  //shortest duration of pulse for VEXTA logic to work in micro seconds
     _minPulseOffTime= 10; //shortest pause between pules in micro seconds
-    _directionResetPause= 20; //shortes amount of time you should wait between changing directions...
+    _directionResetPause= 20; //shortest amount of time you should wait between changing directions...
 
     //Humans & Motor Scale timeing- for the delay in pulsePin();
     //Not constant in code because might want to change the speed dynamically
@@ -249,7 +249,7 @@ int StepperDriver::checkHome() {
 void StepperDriver::pulsePin(int myPin, int myPulseOnDelay, int myPulseOffDelay) {
   //Pulsed pin should be HIGH when this function starts, but it does't really
   //matter because the VEXTA is looking for a change from low to high after 
-  //a suffient time of it haveing been low (i.e. it is debounced)
+  //a sufficient time of it having been low (i.e. it is debounced)
   //Serial.println("pulsing");
 
   digitalWrite(myPin, LOW);
@@ -257,7 +257,7 @@ void StepperDriver::pulsePin(int myPin, int myPulseOnDelay, int myPulseOffDelay)
   delay(myPulseOnDelay);               //what is needed by the motor & or humans
   digitalWrite(myPin, HIGH);
   delayMicroseconds(_minPulseOffTime);  // what is needed for the logic circuit
-  delay(myPulseOffDelay);                //pulsewhat is needed by the motor & or humans
+  delay(myPulseOffDelay);                //pulse what is needed by the motor & or humans
  // Serial.print("named pin");
   
   //digitalWrite(5, LOW);
@@ -265,7 +265,7 @@ void StepperDriver::pulsePin(int myPin, int myPulseOnDelay, int myPulseOffDelay)
   //delay(myPulseOnDelay);               //what is needed by the motor & or humans
   //digitalWrite(5, HIGH);
   //delayMicroseconds(_minPulseOffTime);  // what is needed for the logic circuit
-  //delay(myPulseOffDelay);                //pulsewhat is needed by the motor & or humans
+  //delay(myPulseOffDelay);                //pulse what is needed by the motor & or humans
   
   
   
